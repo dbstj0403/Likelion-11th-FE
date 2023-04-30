@@ -1,0 +1,114 @@
+*{
+    font-family: 'Cafe24Ohsquareair';
+}
+
+@font-face {
+    font-family: 'Cafe24Ohsquareair';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202@1.0/Cafe24Ohsquareair.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+li{
+    list-style: none;
+    padding-right: 40px;
+}
+
+.main{
+    position: absolute;
+    left: 30%;
+    top: 80px;
+    display: block;
+    border: solid 3px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+    border-color: lightcoral;
+    background-color: black;
+
+}
+
+.title{
+    font-size: 50px;
+    color: lightcoral;
+    border: solid 3px;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    background-color: white;
+    font-family: 'Cafe24Ohsquareair';
+
+}
+
+input{
+    width: 500px;
+    height: 40px;
+    border: solid 3px;
+    border-color: grey;
+    color: black;
+    font-size: 15px;
+    margin: 2px;
+}
+
+.plus{
+    width: 60px;
+    height: 47px;
+    color: white;
+    background-color: lightcoral;
+    border-color: lightcoral;
+    font-size: 20px;
+    margin-left: 2px;
+    border-radius: 10px;
+}
+
+ul{
+    font-size: 22x;
+    line-height: 60px;
+    padding-left: 10px;
+    background-color: white;
+
+}
+
+body{
+    background-color: black;
+    font-family: 'Cafe24Ohsquareair';
+}
+
+.list button{
+    margin-left: 30px;
+    width: 70px;
+    height: 30px;
+    color: white;
+    background-color: lightcoral;
+    font-size: 15px;
+    border-color: lightcoral;
+    border-radius: 10px;
+
+}
+
+.list{
+    border: solid 3px;
+    border-color: lightcoral;
+    border-radius: 10px;
+    margin-top: 30px;
+    
+}
+.checkbox{
+    width: 17px;
+    height: 17px;
+    position: relative;
+    right: 5px;
+    top: 5px;
+    accent-color: black;
+
+}
+
+.list li{
+    font-size: 15px;
+    border-bottom: solid 1px;
+    border-color: grey;
+    margin-bottom: 10px;
+    font-family: 'Cafe24Ohsquareair';
+}
+
