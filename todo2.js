@@ -27,9 +27,6 @@ const addItem = (text) => {
         li.appendChild(span);
         li.appendChild(button);
         ul.appendChild(li);
-        
-     
-    }
 };
 
 const handler = (event) => {
