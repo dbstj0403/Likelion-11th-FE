@@ -40,7 +40,7 @@ export default function List({todoData, setTodoData}) {
       <div>
         {todoData.map((data) => (
             <div style={getStyle(data.completed)} key={data.id}> 
-              <p><input type="checkbox" onChange={() => handleCompleteChange(data.id)} delaultedCecked={false} />
+              <p><input type="checkbox" onChange={() => handleCompleteChange(data.id)} delaultedChecked={false} />
               {" "}{data.title}
               <button style={btnStyle} onClick={() => handleClick(data.id)}>x</button>
               </p>
