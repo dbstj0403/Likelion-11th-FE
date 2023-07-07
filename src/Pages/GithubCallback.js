@@ -22,13 +22,13 @@ export default function GithubCallback() {
     }
   };
 
-  useEffect(() => {
-    sendToken();
-  }, []); // 처음 랜더링될 때만 실행
+  // useEffect(() => {
+  //   sendToken();
+  // }, []); // 처음 랜더링될 때만 실행
 
   const githubGetInfo = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/accounts", {
+      const response = await axios.get("http://localhost:8000/accounts/", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("access_token")}`,
         },
@@ -41,8 +41,16 @@ export default function GithubCallback() {
     }
   };
 
+  // useEffect(() => {
+  //   githubGetInfo();
+  // }, []);
+
   useEffect(() => {
-    githubGetInfo();
+    const fetch_github = async () => {
+      await sendToken();
+      await githubGetInfo();
+    };
+    fetch_github();
   }, []);
 
   return (
