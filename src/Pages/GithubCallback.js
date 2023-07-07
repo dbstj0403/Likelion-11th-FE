@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-
 export default function GithubCallback () {
 
     const CODE = new URL(window.location.href).searchParams.get("code");
@@ -14,7 +13,7 @@ export default function GithubCallback () {
         try {
             const response = await axios.post('/accounts/github/token/', 
             {code: CODE});
-            console.log(response);
+            console.log("서버 통신 성공!:", response);
             localStorage.setItem('access_token', response.data.access);
             localStorage.setItem('refresh_token', response.data.refresh);
         }
@@ -27,7 +26,7 @@ export default function GithubCallback () {
 
     const githubGetInfo = async () => {
         try{
-            const response = await axios.get('/accounts', {headers: {Authorization: `Bearer ${localStorage.getItem('access_token')}`}});
+            const response = await axios.get('/accounts/', {headers: {Authorization: `Bearer ${localStorage.getItem('access_token')}`}});
             console.log(response);
             setUserInfor(response.data); 
             console.log('User information:', userInfor);
