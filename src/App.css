@@ -1,4 +1,9 @@
-.App {
+hr{
+  width: 400px;
+  margin-bottom: 20px;
+}
+
+.App{
   text-align: center;
 }
 
