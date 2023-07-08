@@ -22,8 +22,6 @@ export default function KakaoCallback () {
       }
   }
 
-  useEffect(() => {sendToken();}, []); 
-
   const kakaoGetInfo = async () => {
       try{
           const response = await axios.get('/accounts', {headers: {Authorization: `Bearer ${localStorage.getItem('access_token')}`}});
@@ -37,7 +35,10 @@ export default function KakaoCallback () {
       }
   }
 
-  useEffect(() => {kakaoGetInfo();}, []);
+  useEffect(() => {const kakaoLogin = async () => { 
+    await sendToken(); 
+    await kakaoGetInfo(); };
+    kakaoLogin();}, []);
 
     return (
         <div>

@@ -22,8 +22,6 @@ export default function GoogleCallback () {
         }
     }
 
-    useEffect(() => {sendToken();}, []); // 처음 랜더링될 때만 실행
-
     const googleGetInfo = async () => {
         try{
             const response = await axios.get('/accounts', {headers: {Authorization: `Bearer ${localStorage.getItem('access_token')}`}});
@@ -37,12 +35,10 @@ export default function GoogleCallback () {
         }
     }
 
-    useEffect(() => {googleGetInfo();}, []);
-
-
-      
-
-  
+    useEffect(() => {const googleLogin = async () => { 
+        await sendToken(); 
+        await googleGetInfo(); };
+        googleLogin();}, []);
 
     return (
           <div>
