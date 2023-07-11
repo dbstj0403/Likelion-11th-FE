@@ -11,7 +11,7 @@ export default function GithubCallback() {
   const sendToken = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/accounts/github/token",
+        "http://localhost:8000/auth/github/token",
         { code: CODE }
       );
       console.log(response);
@@ -24,7 +24,7 @@ export default function GithubCallback() {
 
   const githubGetInfo = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/accounts/", {
+      const response = await axios.get("http://localhost:8000/accounts", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("access_token")}`,
         },
@@ -37,10 +37,13 @@ export default function GithubCallback() {
     }
   };
 
-  useEffect(() => {const githubLogin = async () => { 
-    await sendToken(); 
-    await githubGetInfo(); };
-    githubLogin();}, []);
+  useEffect(() => {
+    const githubLogin = async () => {
+      await sendToken();
+      await githubGetInfo();
+    };
+    githubLogin();
+  }, []);
 
   return (
     <div>
