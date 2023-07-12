@@ -11,7 +11,7 @@ export default function KakaoCallback () {
 
     const sendToken = async () => {
       try {
-          const response = await axios.post('/accounts/github/token/', 
+          const response = await axios.post('/accounts/kakao/token/', 
           {code: CODE});
           console.log(response);
           localStorage.setItem('access_token', response.data.access);
@@ -24,7 +24,7 @@ export default function KakaoCallback () {
 
   const kakaoGetInfo = async () => {
       try{
-          const response = await axios.get('/accounts', {headers: {Authorization: `Bearer ${localStorage.getItem('access_token')}`}});
+          const response = await axios.get('/accounts/', {headers: {Authorization: `Bearer ${localStorage.getItem('access_token')}`}});
           console.log(response);
           setUserInfor(response.data); 
           console.log('User information:', userInfor);
