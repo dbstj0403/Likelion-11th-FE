@@ -10,7 +10,7 @@ export default function GithubCallback() {
 
   console.log("Code:", CODE);
 
-  const [userInfor, setUserInfor] = useState([]);
+  const [userInfor, setUserInfor] = useState({});
 
   const sendToken = async () => {
     try {

@@ -7,7 +7,7 @@ export default function AddInfo ({setRegisterState}) {
     const [name, setName] =useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
     const [univ, setUniv] = useState("");
-    const [track, setTrack] = useState("");
+    const [track, setTrack] = useState("Backend");
     const [studentId, setStudentId] = useState("");
 
     const submitInfo = async () => {
@@ -34,7 +34,7 @@ export default function AddInfo ({setRegisterState}) {
             }
         }
     }
-
+    console.log(track);
     return (
         <div className="mine">
             <h2>🦁 윤영 팀 서비스를 이용하기 전에 추가적인 정보를 입력해 주세요!</h2>
@@ -46,9 +46,9 @@ export default function AddInfo ({setRegisterState}) {
             <div><input placeholder="ex) 홍익대학교" onChange={(e) => {setUniv(e.target.value)}}></input></div>
             <div className="forwhat"><h3>트랙</h3></div>
             <div><select onChange={(e) => {setTrack(e.target.value)}}>
-                    <option value={'Backend'}>Backend</option>
-                    <option value={'Frontend'}>Frontend</option>
-                    <option value={'Design'}>Design</option>
+                    <option value='Backend'>Backend</option>
+                    <option value='Frontend'>Frontend</option>
+                    <option value='Design'>Design</option>
                 </select>
             </div>
             <div className="forwhat"><h3>학번</h3></div>
