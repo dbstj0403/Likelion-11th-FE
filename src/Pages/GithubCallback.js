@@ -37,14 +37,16 @@ export default function GithubCallback() {
           Authorization: `Bearer ${localStorage.getItem("access_token")}`,
         },
       });
-      console.log(response);
+      console.log("서버에서 받아온 데이터: ", response);
+      console.log("response data: ", response.data);
       if (registerState === true){
         setUserInfor(response.data);
       }
-      setLoading(false);
+      console.log("유저 정보 저장: ", userInfor);
     } catch (error) {
       console.log("Login error!");
     }
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -58,7 +60,7 @@ export default function GithubCallback() {
   return (
     <div>
          {registerState === null ? <Loading/> : null}
-         {registerState === true ? <ShowInfo name={userInfor.name} univ={userInfor.univ} 
+         {registerState === true && loading === false ? <ShowInfo name={userInfor.name} univ={userInfor.univ} 
          track={userInfor.track}/> : null}
          {registerState === false ? <AddInfo setRegisterState={setRegisterState} setUserInfor={setUserInfor}/> : null}
     </div>

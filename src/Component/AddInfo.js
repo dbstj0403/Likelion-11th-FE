@@ -23,7 +23,6 @@ export default function AddInfo ({setRegisterState, setUserInfor}) {
             {headers: { Authorization: `Bearer ${localStorage.getItem("access_token")}`,},});
             console.log(response);
             setRegisterState(true);
-        
             
         }
         catch(error){
