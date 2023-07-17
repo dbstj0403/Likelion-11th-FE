@@ -3,7 +3,7 @@ import React from 'react';
 import { useState } from 'react';
 import axios from 'axios';
 
-export default function AddInfo ({setRegisterState}) {
+export default function AddInfo ({setRegisterState, setUserInfor}) {
     const [name, setName] =useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
     const [univ, setUniv] = useState("");
@@ -22,6 +22,7 @@ export default function AddInfo ({setRegisterState}) {
             {headers: { Authorization: `Bearer ${localStorage.getItem("access_token")}`,},});
             console.log(response);
             setRegisterState(true);
+            
         }
         catch(error){
             console.log("Add info submit error!");

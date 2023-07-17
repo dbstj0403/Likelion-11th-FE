@@ -3,14 +3,15 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import AddInfo from "../Component/AddInfo";
 import ShowInfo from "../Component/ShowInfo";
+import Loading from "../Component/Loading";
 
 export default function GithubCallback() {
   const CODE = new URL(window.location.href).searchParams.get("code");
-  const [registerState, setRegisterState] = useState(false);
+  const [registerState, setRegisterState] = useState(null);
+  const [userInfor, setUserInfor] = useState({});
+  const [loading, setLoading] = useState();
 
   console.log("Code:", CODE);
-
-  const [userInfor, setUserInfor] = useState({});
 
   const sendToken = async () => {
     try {
@@ -29,6 +30,7 @@ export default function GithubCallback() {
   };
 
   const githubGetInfo = async () => {
+    setLoading(true);
     try {
       const response = await axios.get("http://localhost:8000/accounts", {
         headers: {
@@ -37,6 +39,7 @@ export default function GithubCallback() {
       });
       console.log(response);
       setUserInfor(response.data);
+      setLoading(false);
     } catch (error) {
       console.log("Login error!");
     }
@@ -52,8 +55,10 @@ export default function GithubCallback() {
 
   return (
     <div>
+         {registerState === null ? <Loading/> : null}
+         {loading === true ? <Loading/> : null}
          {registerState === true ? <ShowInfo name={userInfor.name} univ={userInfor.univ} 
-         track={userInfor.track}/> : <AddInfo setRegisterState={setRegisterState}/>}
+         track={userInfor.track}/> : <AddInfo setRegisterState={setRegisterState} setUserInfor={setUserInfor}/>}
     </div>
   );
 }
