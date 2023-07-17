@@ -6,7 +6,7 @@ import ShowInfo from "../Component/ShowInfo";
 
 export default function GithubCallback() {
   const CODE = new URL(window.location.href).searchParams.get("code");
-  const [registerState, setRegisterState] = useState(true);
+  const [registerState, setRegisterState] = useState(false);
 
   console.log("Code:", CODE);
 
