@@ -38,7 +38,9 @@ export default function GithubCallback() {
         },
       });
       console.log(response);
-      setUserInfor(response.data);
+      if (registerState === true){
+        setUserInfor(response.data);
+      }
       setLoading(false);
     } catch (error) {
       console.log("Login error!");
@@ -56,9 +58,9 @@ export default function GithubCallback() {
   return (
     <div>
          {registerState === null ? <Loading/> : null}
-         {loading === true ? <Loading/> : null}
          {registerState === true ? <ShowInfo name={userInfor.name} univ={userInfor.univ} 
-         track={userInfor.track}/> : <AddInfo setRegisterState={setRegisterState} setUserInfor={setUserInfor}/>}
+         track={userInfor.track}/> : null}
+         {registerState === false ? <AddInfo setRegisterState={setRegisterState} setUserInfor={setUserInfor}/> : null}
     </div>
   );
 }
