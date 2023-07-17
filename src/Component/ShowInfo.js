@@ -1,4 +1,5 @@
 import React from 'react';
+import './ShowInfo.css';
 import { useNavigate } from 'react-router-dom';
 export default function ShowInfo ({name, univ, track}) {
 
@@ -10,7 +11,7 @@ export default function ShowInfo ({name, univ, track}) {
     }
 
     return (
-        <div className="my">
+        <div className="mymy">
             <h2>{univ} {track} {name}님 안녕하세요! ☺️</h2>
             <button className="login" onClick={logout}>로그아웃</button>
         </div>

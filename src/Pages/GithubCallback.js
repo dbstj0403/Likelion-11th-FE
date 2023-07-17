@@ -14,6 +14,9 @@ export default function GithubCallback() {
   console.log("Code:", CODE);
 
   const sendToken = async () => {
+    if (registerState === true){
+      return;
+    }
     try {
       const response = await axios.post(
         "http://localhost:8000/auth/github/token",
@@ -55,7 +58,7 @@ export default function GithubCallback() {
       await githubGetInfo();
     };
     githubLogin();
-  }, []);
+  }, [registerState]);
 
   return (
     <div>
