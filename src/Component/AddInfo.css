@@ -1,0 +1,51 @@
+.forwhat{
+    position: relative;
+    left: 55px;
+    top: 10px;
+    text-align: left;
+}
+
+.mine{
+    background-color: whitesmoke;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    border-radius: 20px;
+    width: 700px;
+    text-align: center;
+    margin: 30px auto;
+    box-shadow: 10px 10px 10px #aaaaaa;
+}
+
+.mine input {
+    width: 600px;
+}
+
+.submit{
+    width: 600px;
+    height: 50px;
+    margin-top: 50px;
+    border-radius: 10px;
+    border: 0px;
+    background-color: #FF8282;
+    box-shadow: 2px 2px 2px #C18282;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.submit:hover{
+    background-color: #F57878;
+}
+
+select{
+    position: relative;
+    margin-top: 10px;
+    width: 600px;
+    height: 55px;
+    border-radius: 10px;
+    border: solid 0px;
+    box-shadow: 2px 2px 2px #C18282;
+    text-indent: 10px;
+    font-size: 15px;
+}

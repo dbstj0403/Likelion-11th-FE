@@ -32,6 +32,15 @@
     font-size: 15px;
     font-weight: bold;
 }
+
+.login:hover{
+    background-color: #F57878;
+}
+
+.signup:hover{
+    background-color: #F57878;
+}
+
 .my{
     background-color: whitesmoke;
     padding-top: 20px;
