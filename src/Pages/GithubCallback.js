@@ -14,7 +14,7 @@ export default function GithubCallback() {
   console.log("Code:", CODE);
 
   const sendToken = async () => {
-    if (registerState === true){
+    if (registerState === true) {
       return;
     }
     try {
@@ -26,7 +26,6 @@ export default function GithubCallback() {
       localStorage.setItem("access_token", response.data.access);
       localStorage.setItem("refresh_token", response.data.refresh);
       setRegisterState(response.data.register_state);
-
     } catch (error) {
       console.log("Code sending error!");
     }
@@ -42,7 +41,7 @@ export default function GithubCallback() {
       });
       console.log("서버에서 받아온 데이터: ", response);
       console.log("response data: ", response.data);
-      if (registerState === true){
+      if (registerState === true) {
         setUserInfor(response.data);
       }
       console.log("유저 정보 저장: ", userInfor);
@@ -62,10 +61,20 @@ export default function GithubCallback() {
 
   return (
     <div>
-         {registerState === null ? <Loading/> : null}
-         {registerState === true && loading === false ? <ShowInfo name={userInfor.name} univ={userInfor.univ} 
-         track={userInfor.track}/> : null}
-         {registerState === false ? <AddInfo setRegisterState={setRegisterState} setUserInfor={setUserInfor}/> : null}
+      {registerState === null ? <Loading /> : null}
+      {registerState === true && loading === false ? (
+        <ShowInfo
+          name={userInfor.name}
+          univ={userInfor.univ}
+          track={userInfor.track}
+        />
+      ) : null}
+      {registerState === false ? (
+        <AddInfo
+          setRegisterState={setRegisterState}
+          setUserInfor={setUserInfor}
+        />
+      ) : null}
     </div>
   );
 }
