@@ -1,0 +1,61 @@
+*{
+    box-sizing: border-box;
+}
+
+.container{
+    background-color: black;
+}
+
+body{
+    background-color: black;
+    margin: 0;
+    color: white;
+  
+}
+
+.menu{
+    float: left;
+    color: white;
+    margin-top: 10px;
+    font-size: 20px;
+    margin-left: 100px;
+    margin-bottom: 30px;
+   
+}
+
+.menu li{
+    float: left;
+    list-style: none;
+  
+    
+}
+
+.high{
+    float: left;
+    margin-top: 30px;
+    padding-left: 350px;
+}
+
+.login{
+    float: right;
+}
+
+.about{
+    position: relative;
+}
+
+.abouttext{
+    position: absolute;
+    top: 250px;
+    left: 550px;
+    font-size: 22px;
+}
+
+.info{
+    position: absolute;
+    text-align: center;
+    top: 360px;
+    left: 200px;
+    font-size: 15px;
+}
+
