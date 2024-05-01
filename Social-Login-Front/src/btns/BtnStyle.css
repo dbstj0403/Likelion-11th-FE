@@ -1,0 +1,91 @@
+*{
+    box-sizing: border-box;
+} 
+
+.another{
+    font-size: 15px;
+    font-weight: 10px;
+    padding-top: 10px;
+}
+
+.login{
+    width: 400px;
+    height: 50px;
+    border-radius: 10px;
+    margin: 10px;
+    border: 0px;
+    background-color: #FF8282;
+    box-shadow: 2px 2px 2px #C18282;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.signup{
+    width: 400px;
+    height: 50px;
+    border-radius: 10px;
+    border: 0px;
+    background-color: #FF8282;
+    box-shadow: 2px 2px 2px #C18282;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.login:hover{
+    background-color: #F57878;
+}
+
+.signup:hover{
+    background-color: #F57878;
+}
+
+.my{
+    background-color: whitesmoke;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 20px;
+    width: 500px;
+    text-align: center;
+    margin: 30px auto;
+    box-shadow: 10px 10px 10px #aaaaaa;
+}
+
+input{
+    position: relative;
+    margin-top: 10px;
+    width: 400px;
+    height: 55px;
+    border-radius: 10px;
+    border: solid 0px;
+    box-shadow: 2px 2px 2px #C18282;
+    text-indent: 10px;
+    font-size: 15px;
+}
+
+.btns{
+    text-align: center;
+    position: relative;
+    left: 32px;
+}
+
+@media (max-width: 600px){
+    .login{
+        background-color: #32BEBE;
+        box-shadow: 2px 2px 2px #149494;
+    }
+    .signup{
+        background-color: #32BEBE;
+        box-shadow: 2px 2px 2px #149494;
+    }
+    input{
+        box-shadow: 2px 2px 2px #149494;
+    }
+    *{
+        box-sizing: border-box;
+    }
+    .my{
+        
+    }
+}
